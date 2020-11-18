@@ -1,17 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+// <copyright file="IEnvironmentManager.cs" company="Unibo">
+// Copyright (c) Unibo. All rights reserved.
+// </copyright>
 
 namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
 {
-  /// <summary>
-  /// Interfaccia che consente di gestire l'ambiente. Può essere utilizzata da
-  /// una GUI per simulare il comportamento dell'ambiente.
-  /// </summary>
-  public interface IEnvironmentManager
+    using System.Drawing;
+
+    /// <summary>
+    /// Interfaccia che consente di gestire l'ambiente. Può essere utilizzata da
+    /// una GUI per simulare il comportamento dell'ambiente.
+    /// </summary>
+    public interface IEnvironmentManager
   {
     /// <summary>
     /// Richiede l'aggiunta di un nuovo organismo all'ambiente.

@@ -1,11 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
+// <copyright file="Program.cs" company="Unibo">
+// Copyright (c) Unibo. All rights reserved.
+// </copyright>
 
 namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
 {
-  static class Program
+    using System;
+    using System.Windows.Forms;
+
+    static class Program
   {
     /// <summary>
     /// The main entry point for the application.

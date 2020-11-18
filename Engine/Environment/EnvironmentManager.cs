@@ -1,14 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+// <copyright file="EnvironmentManager.cs" company="Unibo">
+// Copyright (c) Unibo. All rights reserved.
+// </copyright>
 
 namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
 {
-  class EnvironmentManager : BaseEnvironmentManager
+    using System;
+    using System.Drawing;
+    using System.IO;
+    using System.Linq;
+
+    class EnvironmentManager : BaseEnvironmentManager
   {
     private Bitmap backgroundBmp;
 
@@ -18,12 +19,12 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
       // Crea la bitmap di background
         backgroundBmp = new Bitmap(width, height);
 
-            var gr = Graphics.FromImage(backgroundBmp); // gr permette di "disegnare" su backgroundBmp
-      
+        var gr = Graphics.FromImage(backgroundBmp); // gr permette di "disegnare" su backgroundBmp
+
         var tiles = new SpriteLoader(@"..\..\..\Images\Background.png", 32, 32);
         var separators = new char[] { ',', '\n', '\r' };
         var text = File.ReadAllText(@"..\..\..\Data\Background.txt"); // legge tutto il contenuto del file come un'unica stringa
-                                                                    // separa in sottostringhe rimuovendo tutti i separatori, poi usa LINQ per trasformare in un array di int
+                                                                      // separa in sottostringhe rimuovendo tutti i separatori, poi usa LINQ per trasformare in un array di int
         var values = text.Split(separators, StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x)).ToArray();
         // ora values contiene tutti i valori nel file letti da sinistra a destra e dall'alto in basso
         int k = 0; // scorre l'immagine nello stesso orgine incrementando questo indice k
@@ -34,7 +35,7 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
                 gr.DrawImage(tiles[0, values[k++]], x, y); // applica lo sprite giusto nella posizione giusta
             }
         }
-      
+
     }
 
     protected override OrganismInfo TryAddOrganism(IOrganism organism, int x, int y)
@@ -42,9 +43,9 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
       /*
        * Esercitazione - Parte 4
        * Traccia per implementare questo metodo:
-       * - Creare un'istanza di OrganismInfo impostandone opportunamente le proprietà (X,Y in base ai parametri x,y, 
+       * - Creare un'istanza di OrganismInfo impostandone opportunamente le proprietà (X,Y in base ai parametri x,y,
        *   Direction in maniera random).
-       * - Controllare se il BoundingBox dell'organismo è contenuto in envRect (con un metodo apposito 
+       * - Controllare se il BoundingBox dell'organismo è contenuto in envRect (con un metodo apposito
        *   della struct Rectangle) e se è libero (con IsRegionEmpty definito in questa classe):
        *   in caso affermativo ritornare il riferimento al OrganismInfo creato, altrimenti tornare null.
        */
@@ -90,11 +91,11 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
        * Traccia per implementare questo metodo: la variabile locale rect
        * può essere spostata di un offset (dx,dy) calcolato in base a o.Direction e a o.Speed.
        * Ad esempio, se o.Direction è Direction.North e o.Speed è 3, allora dx = 0 e dy = -3.
-       * Dopo aver calcolato dx e dy, trovare fra i metodi della struct Rectangle qual è il 
+       * Dopo aver calcolato dx e dy, trovare fra i metodi della struct Rectangle qual è il
        * più idoneo a spostare il rettango appunto di dx e dy.
        * A questo punto il movimento è valido se rect:
        *   1) è contenuto dentro a envRect (trovare un apposito metodo per verificarlo...) e
-       *   2) nessun altro organismo eccetto "o" occupa la regione rect (usare il metodo 
+       *   2) nessun altro organismo eccetto "o" occupa la regione rect (usare il metodo
        *      IsRegionEmpty di questa classe...).
        * Se il movimento è valido, aggiornare o.X e o.Y e tornare true, altrimenti false.
        */

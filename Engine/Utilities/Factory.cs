@@ -1,11 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+// <copyright file="Factory.cs" company="Unibo">
+// Copyright (c) Unibo. All rights reserved.
+// </copyright>
 
 namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
 {
+    using System;
+    using System.Collections.Generic;
+
     /// <summary>
     /// Un semplice oggetto che contiene metodi per la creazione di ambiente ed organismi.
     /// </summary>
@@ -16,7 +17,7 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
         /// </summary>
         /// <param name="width">Dimensione orizzontale del territorio.</param>
         /// <param name="height">Dimensione verticale del territorio.</param>
-        /// <returns>Un riferimento a un oggetto che implementa l'interfaccia per 
+        /// <returns>Un riferimento a un oggetto che implementa l'interfaccia per
         /// interagire con l'ambiente.</returns>
         public static IEnvironmentManager CreateEnvironmentManager(int width, int height)
         {
@@ -43,7 +44,7 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
         }
 
         /// <summary>
-        /// Elenco di nomi di specie per le quali il metodo CreateOrganism 
+        /// Elenco di nomi di specie per le quali il metodo CreateOrganism
         /// è in grado di creare organismi.
         /// </summary>
         public static IEnumerable<string> AvailableSpecies

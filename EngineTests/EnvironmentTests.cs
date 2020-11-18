@@ -1,10 +1,13 @@
-using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+// <copyright file="EnvironmentTests.cs" company="Unibo">
+// Copyright (c) Unibo. All rights reserved.
+// </copyright>
 
 namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
 {
-  [TestClass]
-  public class EnvironmentTests
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+    [TestClass]
+    public class EnvironmentTests
   {
     // Crea l'istanza da testare
     const int TestWidth = 300;

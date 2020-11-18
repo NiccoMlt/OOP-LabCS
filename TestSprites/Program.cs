@@ -1,25 +1,23 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Drawing;
+// <copyright file="Program.cs" company="Unibo">
+// Copyright (c) Unibo. All rights reserved.
+// </copyright>
 
 namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
 {
-  class Program
+    class Program
   {
     static void Main(string[] args)
     {
             /* Esercitazione - Parte 1)
-             * 
+             *
              * Modificare questa console application come segue:
-             * 
-             * a) Creare un'istanza della classe SpriteLoader usando l'immagine che si trova (come path relativo) 
+             *
+             * a) Creare un'istanza della classe SpriteLoader usando l'immagine che si trova (come path relativo)
              *    nel file @"..\..\..\Images\Animals.png". Tale immagine contiene sprite di dimensione 32x48 pixel.
-             *    
+             *
              * b) Salvare lo sprite che si trova nella quinta riga e terza colonna nel file "goat.bmp".
              *    Suggerimento: cercare un metodo che consenta il salvataggio fra i membri della classe Bitmap.
-             *    Eseguire l'applicazione e verificare nella cartella dell'eseguibile che il file sia effettivamente 
+             *    Eseguire l'applicazione e verificare nella cartella dell'eseguibile che il file sia effettivamente
              *    salvato e con il giusto contenuto.
              *    NOTA: Sulla classe SpriteLoader è stato definito un Indexer multidimensionale su oggetti di tipo Bitmap,
              *    sui quali è possibile richiamare il metodo Save(string name).
@@ -41,8 +39,8 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
                     //sl[i, j].Save(@"..\..\..\Images\Sprite_" + i + "_" + j + ".bmp");
                 }
             }
-                
-                    
+
+
         }
     }
 }

@@ -1,17 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+// <copyright file="BaseEnvironmentManager.cs" company="Unibo">
+// Copyright (c) Unibo. All rights reserved.
+// </copyright>
 
 namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
 {
-  /// <summary>
-  /// Un'implementazione di base IEnvironmentManager che implementa alcune logiche generali
-  /// e funzionalità di base, lasciando alcuni dettagli alle classi derivate (Pattern Template Method).
-  /// </summary>
-  abstract class BaseEnvironmentManager : IEnvironmentManager
+    using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+
+    /// <summary>
+    /// Un'implementazione di base IEnvironmentManager che implementa alcune logiche generali
+    /// e funzionalità di base, lasciando alcuni dettagli alle classi derivate (Pattern Template Method).
+    /// </summary>
+    abstract class BaseEnvironmentManager : IEnvironmentManager
   {
     private Random rnd = new Random();
 
@@ -47,7 +48,7 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
       public int Speed { get; set; }
 
       /// <summary>
-      /// Attuale regione rettangolare occupata dall'organismo, calcolata 
+      /// Attuale regione rettangolare occupata dall'organismo, calcolata
       /// in base alle sue coordinate x/Y e dimensioni Width/Height;
       /// </summary>
       public Rectangle BoundingBox
@@ -77,7 +78,7 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
     protected abstract OrganismInfo TryAddOrganism(IOrganism organism, int x, int y);
 
     /// <summary>
-    /// Disegna lo sfondo del territorio. 
+    /// Disegna lo sfondo del territorio.
     /// Questo metodo va implementato nelle classi derivate.
     /// </summary>
     protected abstract void DrawBackground(Graphics gr);
@@ -91,9 +92,9 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
     {
       // Pattern Template Method: qui è implementata la logica generale
       // di aggiunta di un organismo, lasciando alcune scelte al metodo
-      // astratto TryAddOrganism che dovrà essere implementato in una 
+      // astratto TryAddOrganism che dovrà essere implementato in una
       // classe derivata.
-      OrganismInfo oi = TryAddOrganism(organism, x, y); 
+      OrganismInfo oi = TryAddOrganism(organism, x, y);
       if (oi == null)
       { // Non è possiile aggiungerlo
         return false;
@@ -113,8 +114,8 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
     {
       // Pattern Template Method: qui è implementata la logica generale
       // di disegno, lasciando il disegno dello sfondo al metodo
-      // astratto DrawBackground che dovrà essere implementato in una 
-      // classe derivata.      
+      // astratto DrawBackground che dovrà essere implementato in una
+      // classe derivata.
       DrawBackground(gr);
       foreach (var c in organisms)
       {
@@ -126,7 +127,7 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
     public virtual void AdvanceTime()
     {
       /* Esercitazione - Parte 2)
-       * Qui dovrà essere gestito il passare del tempo, come suggerito 
+       * Qui dovrà essere gestito il passare del tempo, come suggerito
        * nel testo dell'esercitazione.
        */
       throw new NotImplementedException();

@@ -1,15 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+// <copyright file="MainForm.cs" company="Unibo">
+// Copyright (c) Unibo. All rights reserved.
+// </copyright>
 
 namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
 {
-  public partial class MainForm : Form
+    using System;
+    using System.Drawing;
+    using System.Linq;
+    using System.Windows.Forms;
+
+    public partial class MainForm : Form
   {
     IEnvironmentManager  environmentManager;
 
@@ -66,7 +66,7 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
 
 
 
-  class NoBackgroundPaintPanel : Panel
+    class NoBackgroundPaintPanel : Panel
   {
     protected override void OnPaintBackground(PaintEventArgs e)
     {

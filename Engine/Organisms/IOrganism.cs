@@ -1,15 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+// <copyright file="IOrganism.cs" company="Unibo">
+// Copyright (c) Unibo. All rights reserved.
+// </copyright>
 
 namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
 {
-  /// <summary>
-  /// Interfaccia che qualsiasi organismo vivente deve implementare.
-  /// </summary>
-  public interface IOrganism
+    using System.Drawing;
+
+    /// <summary>
+    /// Interfaccia che qualsiasi organismo vivente deve implementare.
+    /// </summary>
+    public interface IOrganism
   {
     /// <summary>
     /// Metodo chiamato una sola volta per ciascun organismo quando viene collocato nell'ambiente.

@@ -1,16 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+// <copyright file="SpriteLoader.cs" company="Unibo">
+// Copyright (c) Unibo. All rights reserved.
+// </copyright>
 
 namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
 {
-  /// <summary>
-  /// Classe di utilità per estrarre sprite da un'immagine.
-  /// Assume che tutti gli sprite dentro all'immagine abbiano la stessa dimensione.
-  /// </summary>
-  public class SpriteLoader
+    using System;
+    using System.Drawing;
+
+    /// <summary>
+    /// Classe di utilità per estrarre sprite da un'immagine.
+    /// Assume che tutti gli sprite dentro all'immagine abbiano la stessa dimensione.
+    /// </summary>
+    public class SpriteLoader
   {
     private Bitmap bmp;
 
