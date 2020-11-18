@@ -46,7 +46,7 @@ namespace Unibo.ISI.ProgramazioneAdOggetti.Esercitazioni
       {
         environmentBmp = new Bitmap(environmentViewer.Width, environmentViewer.Height);
       }
-      using (var gr = Graphics.FromImage(environmentBmp))
+      using (Graphics gr = Graphics.FromImage(environmentBmp))
       {
         environmentManager.Draw(gr);
       }
